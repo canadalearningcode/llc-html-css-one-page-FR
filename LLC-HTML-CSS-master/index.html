@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ladies Learning Code - HTML &plus; CSS</title>
+  <meta name="viewport" content="width=1280">
+
+  <!-- CoderDeck core and extension CSS files -->
+  <link rel="stylesheet" href="src/deck.js/core/deck.core.css" type="text/css">
+  <link rel="stylesheet" href="src/deck.js/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/status/deck.status.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/hash/deck.hash.css">
+  <link rel="stylesheet" href="src/deck.js/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="src/css/prettify.css">
+  <link rel="stylesheet" href="src/css/deck.coder.css">
+  <link rel="stylesheet" href="src/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="src/codemirror/theme/default.css">
+  <link rel="stylesheet" href="src/prism.css">
+
+  <!-- Custom for LLC -->
+  <link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Podkova' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" id='style-theme-link' href="src/css/coderdeck.css" type="text/css" >
+  <style type="text/css">
+    
+  </style>
+
+  <script type="text/javascript">
+    function showHint(answerContainerId) {
+      var preTags = document.getElementById(answerContainerId).style.display = "block";
+    }
+  </script>
+</head>
+
+<body class="deck-container">
+	<script type='text/coderdeck' id='coderdeck-default'>
+	  <html>
+	    <head>
+	      <script src='src/jquery.min.js'>SCRIPTEND</head>
+	    <body>CODE</body>
+	  </html>
+	  </script>
+	
+	  <script type='text/coderdeck' id='coderdeck-style-example'>
+	  <html>
+	    <title>test</title>
+	    <style>CODE</style>
+	    <body>
+	      <h1>I'm a H1 heading</h1>
+	      <h2>I'm a H2 heading</h2>
+	      <p>Pargraph of text &lt;p&gt; here</p>
+	      <div class='stuff'>I'm a div &lt;div&gt; with class "stuff"</div>
+	      <div id='my-div'>I'm a &lt;div&gt; with id "my-div"</div>
+	    </body>
+	  </html>
+	</script>
+	
+  <div id="presentation">
+  <!-- **************************************** --> 
+
+    <!-- SLIDE: Workshop intro -->
+    <article class='slide slide-title'>
+      <div class="workshop_title">
+        <h2>Bienvenues à l'intruduction de Ladies Learning Code</h2>
+        <h1>HTML &amp; CSS</h1>
+      </div>
+        
+        <br  clear="left" />
+      <p style="padding-top: 55px; margin-bottom: 0; font-size: 0.9em; color: #999;">
+        ( Interactive code slides thanks to
+        <a href="http://cykod.github.com/CoderDeck/" target="_blank" style="color: #999;">CoderDeck</a>. Also, thanks to <a href="http://twitter.com/pearlchen">Pearl Chen</a> and <a href="http://twitter.com/markreale">Mark Reale</a> for creating the foundation for today's content. )</p>
+    </article>
+
+    <!-- SLIDE: Today's project -->
+    <article class='slide slide-list'>
+      <h2>Voici le projet que vous aurez à réaliser aujourd'hui</h2>
+      <a href="http://#"><img src="assets/project_screenshot.jpg"></a>
+      <p><a href="http://tessalt.github.io/LLC-HTML-CSS/Project/final.html" target="_blank">Cliquez ici</a> pour découvrir le projet</p>
+    </article>
+
+    <!-- SLIDE: Course Outline -->
+    <article class='slide slide-list'>
+      <h2>Plan de cours</h2>
+      <h3 style="margin-top: 1em;">Avant-midi</h3>
+      <ul>
+        <li>Introduction au langage HTML</li>
+        <li>Écrire le code HTML de votre projet</li>
+        <li>Introduction au langage CSS</li>
+      </ul>
+      <h3 style="margin-top: 1em;">Après-midi</h3>
+      <ul>
+        <li>Plus de CSS</li>
+        <li>Touche finale</li>
+        <li>Fin ! Et autres étapes...</li>
+      </ul>
+    </article>
+
+    <!-- SLIDE: Set up -->
+    <article class='slide slide-list'>
+      <h2>Préparations</h2>
+      <p>Vous devriez avoir téléchargé les items suivants :</p>
+      <ul>
+        <li><strong>Sublime Text</strong> (<a href="http://www.sublimetext.com/">lien</a>) - un éditeur de texte très populaire pour ses multiples fonctionnalités.</li>
+        <li><strong>Google Chrome</strong> (<a href="https://www.google.com/intl/en/chrome/browser/">lien</a>) - Choisir un navigateur web moderne qui possède de bons outils de développement  pour vous aider à construire des pages web plus facilement. <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a> est aussi une option gagnante ! Un de ces navigateurs doit devenir le vôtre <em>par défaut.</em> <a href="https://support.google.com/chrome/answer/95417?hl=en">Voici la marche à suivre</a>.</li>
+        <li><strong>La présentation et les fichiers nécessaires aujourd'hui </strong> (<a href="https://github.com/tessa-lt/LLC-HTML-CSS">lien</a>).  Cliquez sur le bouton en bas à droite de la page pour accéder au dossier compressé en .zip. Pour l'ouvrir, il faut le décompresser le dossier (sur Windows, faites un clique droit et sélectionner « Extraire Tous »). Faites un clique droit sur « index.html » ou « index » et « Ouvrir avec Chrome ».</li>
+      </ul>
+    </article>
+
+    <!-- SLIDE: Opening HTML files in your browser, Part 1 -->
+    <article class='slide slide-list'>
+      <h1>Ouvrir un fichier HTML dans un navigateur</h1>
+    </article>
+
+    <!-- SLIDE: Opening HTML files in your browser, Part 2 -->
+    <article class='slide slide-list'>
+      <h2>Qu'est-ce qu'un navigateur ?</h2>
+      <p>La fonction principale d'un navigateur est de présenter la « ressource web » de votre choix dans la fenêtre de navigation lorsque vous sollicitez un serveur web. La « ressource web » est généralement un document HTML, mais il peut s'agir d'un PDF, d'une image ou d'un autre type de document.<p>
+    </article>
+
+    <!-- SLIDE: Opening HTML files in your browser, Part 3 -->
+    <article class='slide slide-list'>
+      <h2> Qu'est-ce qu'un document HTML?</h2>
+      <p>Nous aborderons ce sujet bientôt. Pour l'instant, veuillez jeter un oeil à notre exemple. Allez sur <a href="http://ladieslearningcode.com">http://ladieslearningcode.com</a>. Faites un clique droit et sélectionnez « Afficher le code source de la page ». Ce que vous verrez est du HTLM.</p>
+      <p>Nous apprendrons aujourd'hui comment écrire notre propre HTML. Pour l'instant, nous apprendrons comment ouvrir un document HTML (comme ceux que nous créerons plus tard) dans notre navigateur.</p>
+      <ol>
+        <li>Ouvrez Sublime Text et allez dans « Fichier-> Ouvrir » /"File -> Open".</li>
+        <li>Naviguez jusqu'au dossier appelé « Projet » dans le dossier de préparation que vous aviez préalablement téléchargé pour aujourd'hui.</li>
+        <li>Sélectionnez tous les fichiers du dossier et cliquez « Ouvrir »/"Open"</li>
+        <li>Maintenant que le dossier est ouvert dans Sublime, cliquez sur « blank.html » pour qu'il remplisse l'écran. Ensuite, faites un clique droit et sélectionnez « Ouvrir dans le navigateur »/" Open in Browser".<a href="https://support.google.com/chrome/answer/95417?hl=en">Si votre navigateur par défaut n'est pas Chrome, voici la marche à suivre</a>.)</li>
+      </ol>
+    </article>
+
+    <!-- SLIDE: Opening HTML files in your browser, Part 4 -->
+    <article class='slide slide-list'>
+      <h2>Vous devriez obtenir un résultat comme celui-ci:</h2>
+      <div class="centered">
+        <img src="assets/blank_output.jpg">
+      </div>
+    </article>
+
+    <!-- SLIDE: Opening HTML files in your browser, Part 5 -->
+    <article class='slide slide-list'>
+      <h1>Maintenant, modifions notre fichier et réouvrons-le dans notre navigateur</h1>
+    </article>
+
+    <!-- SLIDE: Opening HTML files in your browser, Part 6 -->
+    <article class='slide slide-list'>
+      <h2>Retournons à Sublime Text...</h2>
+      <ol>
+        <li>Modifier. par exemple, modifiez le texte entre les balises &#60;p&#62; et &#60;/p&#62; </li>
+        <li>Sauvegardez votre fichier (CMD + S or CONTROL + S)</li>
+        <li>Faites un clique-droit et sélectionnez « Ouvrir dans le navigateur/Open in Browser ».</li>
+        <li>Modifiez un autre élément et ouvrez-le à nouveau dans le navigateur, seulement pour vous assurez que tout est en place !</li>
+        <li>Après la sauvegarde, vous pouvez aussi rafraichir votre page (plutôt que d'ouvrir le fichier chaque fois dans une nouvelle fenêtre!)</li>
+      </ol>
+    </article>
+
+    <!-- SLIDE: You won't break anything -->
+    <article class='slide slide-list'>
+      <h2>Prenez note : ne craignez pas de mal faire ou de briser quoi que ce soit. Ce que nous ferons aujourd'hui, les ordinateurs sont faits pour ca!<br /><br /> Sentez-vous bien à l'aise de vous amuser, de prendre des risques et de faire des erreurs, c'est la meilleure façon d'apprendre !</h2>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-subhead'>
+      <h1>HTML &#38; CSS: Qu'est-ce que c'est ?</h1>
+    </article>
+
+    <article class='slide slide-subhead'>
+      <h1>Débutons avec le HTML...</h1>
+      <p>C'est le contenu de votre page</p>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-list'>
+      <h2>Les pages web sont faites de HTML (HyperText Markup Language) </h2>
+      <p>Nous utilisons le HTML pour décrire chaque partie de la page web au navigateur pour que notre contenu soit présenté comme nous le souhaitons. Nous aidons le navigateur à comprendre comment nous voulons que le contenu soit présenté en utilisant des balises/ des tags. Voici quelques exemples de balises que vous avez sûrement déjà vus auparavant :</p>
+      <ul>
+        <li>&#60;h1&#62; et &#60;/h1&#62;</li>
+        <li>&#60;p&#62; et &#60;/p&#62;</li>
+        <li>&#60;strong&#62; et &#60;/strong&#62;</li>
+      </ul>
+      <p>Pour créer un fichier HTML ce dernier doit être composé de la l'extension .hmtl ( comme un fichier PDF possède l'extension .pdf à la fin du document).</p>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-list'>
+      <h2>Petit exercice rapide : Enregistrons un nouveau fichier HTML</h2>
+      <ol>
+        <li>Dans Sublime Text, cliquez sur « Fichier -> Nouveau fichier <br />/ File -> New File »</li>
+        <li>Par défaut, le type de fichier sera « Plain Text » pas HTML</li>
+        <li>Vous avez 2 choix pour sauver vos fichiers : </li>
+          <ul>
+            <li>Dans le coin en bas à droite, vous devriez voir l'inscription « Plain Text ». Cliquez sur ces mots et sélectionnez HTML dans la liste des options. Sauvegardez le fichier grâce à CMD + S ou CONTROL + S. Donnez-lui n'importe quel nom, sauvez-le n'importe où, nous ne l'utiliserons pas. </li>
+            <li>Cliquez sur « Fichier -> Enregistrez-sous / File -> Save As». Donnez-lui un nom et ajoutez .html à la fin (par exemple : « projet.html » ). Donnez-lui n'importe quel nom, sauvez-le n'importe où, nous ne l'utiliserons pas.</li>
+          </ul>
+      </ol>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-list'>
+      <h2>Les rouages du HTML</h2>
+      <p>Quand nous écrivons du HTML, nous créons des éléments HTML en mettant notre contenu entre des balises (« tags » en anglais). Ces balises décrivent la disposition du contenu, pas leur apparence ni leur style. Nous utilisons différentes balises pour créer de multiples éléments et ensemble deviennent notre document HTML. </p>
+      <p>Il est important de saisir que le HTML est important pour la structure du document et qu'il a très peu avoir avec le visuel du résultat final. Les éléments de style, c'est avec le CSS que nous les créerons.</p>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-list'>
+      <h2>Les balises proscrites !</h2>
+      <p>Il est important de créer un code HTML clair et cohérent dans sa sémantique et sa structure avant d'entreprendre quoi que ce soit d'autre. Quand on écrit du HTML on structure le projet et on y incorpore le contenu, nous n'en sommes pas à l'étape du design ni du style (cela sera le rôle du CSS).</p>
+      <p>Voici donc quelques balises que vous ne devriez JAMAIS utiliser :</p>
+      <ul>
+        <li>&#60;b&#62;Je suis du texte en caractère gras !&#60;/b&#62;</li>
+        <li>&#60;i&#62;Je suis du texte en italique !&#60;/i&#62;</li>
+        <li>&#60;u&#62;Je suis du texte souligné !&#60;/u&#62;</li>
+        <li>&#60;marquee&#62;Quelqu'un se souvient de la balise marquee ?&#60;/marquee&#62;</li>
+        <li>&#60;font size="large"&#62;IMMENSE TEXTE !&#60;/font&#62;</li>
+        <li>&#60;center&#62;Je suis un texte centré !&#60;/center&#62;</li>
+      </ul>
+      <h3>S.V.P n'utilisez plus jamais ces balises !</h3>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-subhead'>
+      <h1>En parlant du CSS…</h1>
+      <p>C'est ce qui rendra votre site plaisant au regard !</p>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-list'>
+      <h2>Qu'est-ce le CSS?</h2>
+      <p>CSS (Cascading Style Sheets) est ce qui rendra votre site agréable à regarder.</p>
+      <p>Pendant que le HTML définit la structure des différentes pages de votre site, le CSS indique l'emplacement et le look des différents éléments qui le constituent.</p> 
+      <p>Par exemple, p signifie paragraphe en HTML. Si nous voulons que tous nos paragraphes soient rouge et soulignés, nous devrons écrire ceci : </p>
+<pre><code class="language-css">
+p {
+  color: red;
+  text-decoration: underline;
+}
+</code></pre>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-list'>
+      <h2>Ajoutons ceci à notre document HTML </h2>
+      <p>Pour indiquer que nous ajoutons du CSS à notre fichier blank.html nous devons trouver les balises <code>&#60;style&#62;</code> ouvrantes et fermantes entre les balises <code>&#60;head&#62;</code> ouvrantes et fermantes.</p>
+<pre class="language-markup"><code class="">
+  &#60;!doctype html&#62;
+    &#60;head&#62;
+      &#60;title&#62;Ladies Learning Code HTML and CSS&#60;/title&#62;
+      &#60;style&#62;
+        p {
+        color: red;
+        text-decoration: underline;
+        }
+      &#60;/style&#62;
+    &#60;/head&#62;
+    &#60;body&#62;
+      &#60;p&#62;Ceci est un paragraphe&#60;/p&#62;
+    &#60;/body&#62;
+  &#60;/html&#62;
+      </code></pre>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-subhead'>
+      <h1>Ta-da!</h1>
+      <p>Vous venez de réaliser votre première page web !</p>
+      <p>HTML + CSS = page web</p>
+    </article>
+
+    <!-- new slide -->
+    <article class='slide slide-list'>
+      <h2>À propos du HTML et du CSS...</h2>
+      <p>Le HTML et le CSS sont comme des langues et tout comme le Français ou l'Italien, ces langues ont leurs propres règles. Bien sûr il faut du temps pour bien maîtriser ces langues. Ne vous en faites pas si vous ne comprenez pas tout du premier coup ! </p>
+    </article>
+
+    <!-- SLIDE: Websites without CSS -->
+    <article class='slide slide-list'>
+      <h2>Site web sans CSS...</h2>
+      <p>Ceci:</p>
+      <img src="assets/llc_site_with_css.jpg">
+    </article>
+
+    <!-- SLIDE: Websites without CSS -->
+    <article class='slide slide-list'>
+      <h2>Site web sans CSS...</h2>
+      <p>Deviens cela:</p>
+      <img src="assets/llc_site_without_css.jpg">
+    </article>
+
+    <!-- SLIDE: What is a website? -->
+    <article class='slide slide-subhead'>
+      <h1>Pourquoi est-ce ainsi ?</h1>
+      <h2>Parce que le HTML définit le contenu et que le CSS définit l'apparence et la disposition (ce qui rend le web joli).</h2>
+    </article>
+
+    <!-- SLIDE: What is a website? -->
+    <article class='slide slide-subhead'>
+      <h1>D'abord, concentrons-nous sur le HTML</h1>
+      <p>Il est temps d'écrire un peu de HTML (ce que nous appelons le « markup »).</p>
+      <p>Vous pouvez enlever ce que nous avons écrit entre les balises &#60;style&#62; et &#60;/style&#62; pour l'instant. Gardez &#60;style&#62; et &#60;/style&#62; ici!</p>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Les balises HTML</h2>
+      <p>La structure d'une page web est définie par des balises HTML. Des chevrons simples définissent les balises, comme ceci :</p>
+      <p class="centered" style="font-size: 3em;"><code>&lt;Balise&gt;</code></p>
+      <p class="centered sidenote">Imaginez que les balises HTML sont comme les poutres structurales d'une maison. C'est ce qui construit et structure la page web.</p>
+      <p class="centered"><img src="assets/house_beam.jpg" width="300" height="232" alt="house beam" /></p>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Les balises HTML</h2>
+      <p>Les balises HTML viennent généralement par <strong>paires</strong> -- donc une balises ouvrante et une balise fermante avec une barre oblique.</p>
+      <p class="centered" style="font-size: 3em;"><code>&lt;balise&gt;&lt;/balise&gt;</code></p>
+      <p class="sidenote">Un exemple que vous avez déjà vu :</p>
+<pre class="language-markup"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html>
+  &lt;head&gt;
+    &lt;title&gt; &lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>   
+    </article>
+
+   <!-- SLIDE: HTML -->
+    <article class='slide slide-list' >
+      <h2>Les balises HTML</h2>
+      <p>Les balises peuvent être imbriquées les unes dans les autres, comme ici :</p>
+      <p class="centered" style="font-size: 2.5em;"><code>&lt;balise&gt;<span style="font-size: 1.3em; color: purple;">&lt;balise&gt;&lt;/balise&gt;</span>&lt;/balise&gt;</code></p>
+      <p class="centered sidenote">(On réfère souvent à ce genre de situation en terme d'élément parent et d'élément enfant/ <em>parent node</em> & <em>child nodes</em>.)</p>
+      <br />
+      <p class="sidenote" style="margin-bottom: 0px;">Dans l'exemple ci-dessous :</p>
+      <ul class="sidenote">
+        <li><code>&lt;title&gt;</code> est imbriqué entre les balises <code>&lt;head&gt;</code> ouvrantes et fermantes. Ainsi on peut dire que la balise <code>&lt;head&gt;</code> est un élément parent et que la balise <code>&lt;title&gt;</code>  est un élément enfant.</li>
+        <li>Plus spécifiquement, la balise <code>&lt;head&gt;</code>est aussi en même temps un élément enfant de la balise  <code>&lt;html&gt;</code>.</li>
+        <li>Pendant que la balise <code>&lt;html&gt;</code> est toujours l'élément racine, il ne possède <strong>pas</strong> d'élément parent. </li>
+        <li>Remarquez aussi que la balise <code>&lt;head&gt;</code> et la balise <code>&lt;body&gt;</code> sont au même niveau. Elles sont tous les deux des éléments enfant de la balise<code>&lt;html&gt;</code>. Elles sont comme des soeurs !</li>
+      </ul>
+<pre style="width: 45%; float: left;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    <strong>&lt;title&gt;</strong> <strong>&lt;/title&gt;</strong>
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre> 
+<pre style="width: 45%; float: right;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  <strong>&lt;head&gt;</strong>
+    &lt;title&gt; &lt;/title&gt;
+  <strong>&lt;/head&gt;</strong>
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre> 
+<br clear="all" />
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Quels éléments vont dans le <code>&lt;head&gt;</code> et dans le  <code>&lt;body&gt;</code>?</h2>
+      <p>La principale différence est que les éléments que vous placerez dans le <code>&lt;body&gt;</code> apparaîtrons sur votre page web. Les éléments que vous mettrez dans le  <code>&lt;head&gt;</code> ne seront jamais visible sur votre page web. Vous pouvez imaginer que ce que vous écrirez dans le <code>&lt;head&gt;</code> est une façon de communiquer secrètement avec le navigateur. Par exemple, la feuille de style de votre page web s'inscrit à cet endroit puisque nous ne voulons pas que le code du style apparaisse sur la page, mais nous souhaitons que le navigateur l'interprète et l'applique adéquatement. </p>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Exercice : Ouvrir le fichier « blank.html » avec Sublime Text</h2>
+      <ol>
+        <li>Changez le contenu entre les balises <code>&lt;title&gt;</code>  et observez les changements dans votre navigateur.</li>
+        <li>Ajoutez un paragraphe.</li>
+        <li>Ajoutez quelques titres à votre page; au-dessus de chaque paragraphe. Un conseil : vous aurez besoin de ces balises : <code>&lt;h1&gt;</code> et<code>&lt;/h1&gt;</code>, <code>&lt;h2&gt;</code> et <code>&lt;/h2&gt;</code> et vous pouvez même expérimenter avec h3, h4, h5 et h6 si vous le souhaitez.</li>
+        <li>Ajoutez 3 hyperliens. Le code pour créer un hyperlien ressemble à celui-ci :<br><code>&lt;a href="http://link.com"&gt;Cliquez ici !&lt;/a&gt;</code>
+      </ol>
+      <p>Ne vous en faites pas trop avec l'ordre de votre code pour l'instant. L'important est de coder !</p>
+      <p>N'oubliez pas de sauvegarder votre fichier et de rafraîchir souvent la page affichée dans votre navigateur pour votre code en action !</p>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Un mot au sujet des attributs</h2>
+      <p>Les attributs sont une autre partie très importante du code HTML.</p>
+      <p>Un attribut HTML modifie un élément HMTL. Il est composé d'un nom et d'une valeur séparée par un = et écrit à l'intérieur des chevrons de la balise ouvrante, après le nom de la balise.</p>
+        <pre><code>&lt;balise attribut="valeur"&gt;(contenu modifié par la valeur)&lt;/balise&gt;</code></pre>
+      <p>Ici, « balise » représente l'élément HTML et « attribut » représente le nom de l'attribut.</p>
+      <p>Voici un exemple d'un attribut que nous avons déjà vu aujourd'hui :</p>
+        <pre><code>&lt;a href="link.com"&gt;Cliquez ici !&lt;/a&gt;</code></pre>
+      <p>Dans ce cas, « a » est la balise d'hyperlien, « href » est l'attribut et « http://link.com » est la valeur.</p>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Exercice : Écrivons le <em>markup</em> pour notre projet final</h2>
+      <p>Le résultat final/ l'<em>output</em> (ce que vous verrez dans votre navigateur) pour cet exercice est sur la prochaine diapo. Écrivez le HTML</p>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Écrivez le HTML pour obtenir ce résultat</h2>
+      <img src="assets/step_1_output.jpg">
+      <p>Un conseil : vous devriez utiliser <code>&lt;h1&gt;</code> et <code>&lt;/h1&gt;</code> qu'une seule fois, <code>&lt;h2&gt;</code> et <code>&lt;/h2&gt;</code> trois fois, <code>&lt;h3&gt;</code> et <code>&lt;/h3&gt;</code> qu'une seule fois.</p>
+      <p>Vous pouvez générer votre propre faux texte ici:<a href="http://www.lipsum.com/">http://www.lipsum.com</a>. Ou encore, essayez <a href="http://cupcakeipsum.com/">Cupcake Ipsum</a> ou <a href="http://baconipsum.com/">Bacon Ipsum</a>, pour faire différent.
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Ajouter des images</h2>
+      <p>Apprenons comment ajouter des images à notre page web. Vous remarquerez que les balises d'image sont particulières dans la mesure où elles sont autofermantes/ <em>self-closing</em>. La balise d'image ne possède pas de balise fermante.</p>
+      <p>Débutons en ajoutant une image déjà en ligne. Voici le code :</p>
+      <pre><code class="language-markup">
+        &lt;img src="http://placekitten.com/g/200/200"&gt;
+      </code></pre>
+      <p>Essayez de copier/coller cette ligne de code dans votre projet juste sous la balise ouvrante<code>&lt;body&gt;</code>.</p>
+      <p>Ensuite, essayez de trouver différentes images sur internet et remplacez celle du chaton.</p>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Ajouter des images, seconde partie</h2>
+      <p>Il existe une autre façon d'ajouter des images si vos images ne sont pas déjà en ligne et qu'elles sont dans un fichier dans votre ordinateur.</p>
+      <p>Dans votre dossier de projet, au même niveau que votre fichier « blank.html » vous trouverez une image appelée « logo.png ». Pour ajouter cette image sur votre page web vous devrez inscrire ce code : </p>
+      <pre><code class="language-markup">
+        &lt;img src="logo.png"&gt;
+      </code></pre>
+      <p>Copiez/collez cette ligne de code dans votre projet, juste sous la balise ouvrante  <code>&lt;body&gt;</code>.</p>
+      <p>Ensuite, remplacez cette image avec une des images du dossier « Images » dans le dossier du projet. Un conseil : la solution est semblable, mais vous devrez ajouter « images/ » devant le nom de l'image. ( Puisqu'« Images » est le nom du dossier, on doit avertir le navigateur pour qu'il sache où trouver le fichier). </p>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Exercice : Ajouter un logo et un avatar à votre projet</h2>
+      <p>Le résultat final/ l'<em>output</em> (ce que vous verrez dans votre navigateur) pour cet exercice est sur la prochaine diapo. Écrivez le HTML.</p>
+      <p><strong>Un conseil : l’image du logo s'appelle « logo.png » et l'exemple d'avatar s'appelle « profile.jpg ». Vous les trouverez tous les deux dans le dossier « images ».</strong></p>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Écrivez le HTML pour obtenir ce résultat :</h2>
+      <img src="assets/step_2_output.jpg">
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Rapide précision sur les types d'images :</h2>
+      <p>Il y a 3 principaux types d'images : jpg, png et gif. Voici comment on les utilise : </p>
+      <ul>
+        <li>Pour une très grande image ou une photo : choisissez jpg</li>
+        <li>Pour les icônes, les logos, du texte ou tout ce qui requière un fond en transparence : choisissez png</li>
+        <li>Pour des animations, particulièrement si elle contient des chats : choisissez gif (pour les chats, c'est une blague!)</li>
+      </ul>
+      <div class="centered">
+        <img src="http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/182.gif.pagespeed.ce.S3pBqCa_-u.gif">
+      </div>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Exercice : ajouter quelques images</h2>
+      <p>Le résultat final/ l'<em>output</em> (ce que vous verrez dans votre navigateur) pour cet exercice est sur la prochaine diapo.</p>
+      <ul>
+        <li>Ajoutez l'image de quelque chose que vous aimez (jetez un oeil <a href="http://tessalt.github.io/LLC-HTML-CSS/Project/final.html">à ce lien</a> et faites dérouler pour comprendre).  Évitez de prendre de grosses images pour l'instant, vous apprendrez comment redimensionner les images avec du CSS plus tard).</li>
+        <li>Ajouter les icônes de Twitter, Facebook et Linkedin aux liens - vous devrez utiliser des balises imbriquées pour ceci afin que les images soient cliquables ! Vous trouverez les logos que vous pouvez utiliser dans le dossier Projet/Images.</li>
+      </ul>
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Écrivez le HTML pour obtenir ce résultat : </h2>
+      <img src="assets/step_3_output.jpg">
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>Et voilà !</h2>
+      <p> Vous avez écrit tout le HTML nécessaire au projet d'aujourd'hui ! Votre « markup » devrait ressembler à ceci :</p>
+      <img src="assets/result_after_step_3.jpg">
+    </article>
+
+    <!-- SLIDE: HTML -->
+    <article class='slide slide-list'>
+      <h2>À propos de l'organisation</h2>
+      <p>Avez-vous remarqué comment le <em>markup</em> de la diapo précédente était vraiment clair et facile à lire ? Tout à été pensé en conséquence !</p>
+      <p>Prenez un moment pour mettre de l'ordre dans votre code pour qu'il soit identique à celui présenté en exemple. Quand nous aurons débuté le CSS, vous en serez heureux.</p>
+      <p><strong>Débutons enfin le CSS!</strong></p>
+    </article>
+
+    <!-- END OF HTML SECTION -->
+
+    <!-- SLIDE: CSS Basics -->
+    <article class='slide slide-subhead'>
+      <h1>CSS : la base</h1>      
+    </article>  
+
+    <!-- SLIDE: CSS and HTML -->
+    <article class="slide slide-subhead">
+      <h1>Le CSS va de pair avec le HTML</h1>
+      <h2>Le CSS ne fait rien par lui même, c'est la couche de présentation par dessus celle du contenu. </h2>
+      <h2>Si le HTML est la structure de la maison, le CSS est l'aménagement et la décoration.</h2>
+    </article>
+  
+    <!-- SLIDE: CSS Syntax 1 -->
+    <article class="slide slide-list">
+      <h2>La syntaxe du CSS</h2>
+        <p>Le CSS est fait de <strong>règles</strong> en symbiose avec les éléments du HTML (les balises comme <code>&lt;p></code> et <code>&lt;ul></code>), pour définir leur style, leur apparence. </p>
+        <p>Une règle CSS est composée d'un <strong>sélecteur</strong> et d'une ou plusieurs <strong>déclarations</strong></p>
+        <p>Un <strong>sélecteur</strong> aide le navigateur à déterminer quel élément sera modifié.</p>
+        <p>Ça ressemble à ceci :</p>
+        <pre><code class="language-css">h2 {}</code></pre>   
+        <p>Le sélecteur si dessus sélectionne tous les éléments de type <code>&lt;h2></code> et y applique un ou des styles. Les styles doivent être mentionnés entre les 2 accolades.</p>     
+    </article>
+      
+    <!-- SLIDE: CSS Syntax 2 -->
+    <article class="slide slide-list">
+      <h2>La syntaxe du CSS</h2>
+      <p>Une <strong>déclaration</strong>  dicte au navigateur quel style nous voulons donner à nos éléments.</p>
+      <p>Une déclaration est toujours composée de 2 parties : une <strong>propriété</strong> et une <strong>valeur</strong>.</p>
+      <p>Une <strong>propriété</strong> dicte au navigateur qu'est-ce que nous allons modifier (par exemple : la police de caractère, une couleur, une taille, etc.)</p>
+      <p>Une <strong>valeur</strong> dicte au navigateur quelle sera la modification (par exemple : Arial, vert, petit, etc.)</p>
+      <p>une <strong>déclaration</strong> ressemble à ceci:</p>
+        <pre><code class="language-css">background-color: green;</code></pre>   
+    </article>
+
+    <!-- SLIDE CSS Syntax 2.1 -->
+    <article class="slide slide-list">  
+      <h2>La syntaxe du CSS</h2>
+        <pre><code class="language-css">background-color: green;</code></pre>
+        <p>La <strong>valeur</strong> (la partie <em>après</em> les deux-points) est spécifique au type de propriété.</p>
+        <p>Par exemple : les propriétés reliées à une taille(<code>height, width</code>) sont généralement exprimées en <code>px</code>  (nombre de pixels) alors que les propriétés reliées à une couleur seront spécifiées avec le nom de la couleur ou son code ______.</p>
+        <p>Il est primordial de respecter la syntaxe du code que vous écrivez : un deux point après le nom de la propriété et un point-virgule après la valeur.</p>
+    </article>
+
+    <!-- SLIDE Adding Style Tags -->
+    <article class="slide slide-list">
+      <h2>Ajouter du CSS au HTML</h2>
+      <p>Vous devez rédiger votre CSS entre 2 balises <code>&lt;style>&lt;/style></code>.</p>
+      <p>Vous devez ajouter ces balises dans le <code>&lt;head></code> de votre document HTML, comme ceci :</p>
+<pre><code class="language-markup">
+&lt;html>
+  &lt;head>
+    &lt;style>
+      h2 {
+        background-color: green;
+      }
+    &lt;/style>
+  &lt;/head>
+  &lt;body>
+    
+  &lt;/body>
+&lt;/html>
+</code></pre>
+      </ul>
+    </article>
+
+    <!-- SLIDE: CSS Syntax 3 -->
+    <article class="slide slide-list">
+      <h2>La syntaxe du CSS</h2>
+      <p>Lorsque nous rassemblons le sélecteur et les déclarations, cela nous donne une règle CSS, comme ceci: </p>
+<pre><code class="language-css">
+h2 {
+  background-color: green;
+}
+</code></pre>
+        <p>Cette règle sélectionnera tous les éléments de type <code>&lt;h2></code> pour modifier leur arrière-plan afin qu'il soit vert.</p>
+        <p>Essayer de copier/coller ce code entre les balises <code>&lt;style></code> de votre projet et rafraîchissez la page dans votre navigateur.</p>
+    </article>
+
+    <!-- SLIDE: CSS Syntax 4 -->
+    <article class="slide slide-list">
+      <h2>La syntaxe du CSS</h2>
+      <p>Il est possible d'ajouter plusieurs déclarations (propriétés: valeurs; sets) à un des sélecteurs pour modifier plusieurs propriétés: </p>
+<pre><code class="language-css">
+  h2 {
+    background-color: green;
+    font-size: 28px;
+  }
+</code></pre>
+        <p>Soyez certains que vous terminez chaque déclaration par un point-virgule !</p>
+        <p>Essayez de remplacer la règle précédente pour le <code>&lt;h2></code> avec celle-ci et rafraîchissez la page dans votre navigateur.</p>
+        <p>Ensuite, enlevez tous le code que vous avez ajouté entre les balises <code>&lt;style></code>. Nous en ajouterons d'autres bientôt !</p>
+    </article>
+
+    <!-- SLIDE CSS First -->
+    <article class="slide slide-list">
+      <h2>Exercice: First CSS Rule</h2>
+      <ul>
+        <li>Trouvez les balises <code>&lt;style></code> entre les balises <code>&lt;head></code> de votre fichier <strong>blank.html</strong></li>
+        <li>Entre les deux balises, écrivez un sélecteur pour la balise <code>&lt;body></code></li>
+        <li>Puis, ajoutez une  propriété de couleur/ <code>color: </code> avec une la valeur bleue/ <code>blue;</code></li>
+<pre><code class="language-css">
+body {
+  color: blue;
+}
+</code></pre>
+      </ul>
+      <p>Tout le texte de la page est maintenant bleu puisque la balise <code>&lt;body></code> est la plus haute dans la hiérarchie que l'on peut observer sur notre page. Ainsi, la propriété de couleur/ <code>color</code> s'applique sur le <code>&lt;body></code> ET tous ses éléments enfants incluant tous les titres, les paragraphes et les listes.</p>
+    </article>
+
+    <!-- SLIDE CSS Color Change -->
+    <article class="slide slide-list">
+      <h2>Utiliser les codes HEX</h2>
+      <p>Changeons la couleur du texte pour qu'il soit plus facile à lire.</p>
+      <p>Nous devrons utiliser un <strong>code hex</strong>, qui est un code à 6 caractères qui décrit une couleur.</p>
+      <p>Il n'est pas nécessaire de savoir comment ce code se compose, souvenez-vous simplement qu'il doit toujours débuter par un signe <code>#</code>. Il peut être pratique de vous souvenir que quelques codes HEX pour certaines couleurs de bases:</p>
+      <ul>
+        <li>Blanc: <code>#FFFFFF</code></li>
+        <li>Noir: <code>#000000</code></li>
+        <li>Rouge: <code>#FF0000</code></li>
+        <li>Vert: <code>#00FF00</code></li>
+        <li>Bleu: <code>#0000FF</code></li>
+      </ul>
+      <p>Le code pour un beau gris foncé est le<code>#444444</code>. Ajoutons-le !</p>
+<pre><code class="language-css">  
+body {
+  color: #444444;
+}
+</code></pre>          
+        <p>Jetez un oeil à <a href="http://www.colorpicker.com/">http://colorpicker.com</a> pour une multitude d'autres couleurs !</p>
+    </article>
+
+    <!-- SLIDE CSS Fonts -->
+    <article class="slide slide-list">
+      <h2>Enjolivez vos caractères typographyques avec le CSS</h2>
+        <p>Il existe plusieurs propriétés CSS qui nous permettent de modifier l'apparence de notre texte en HTML:</p>
+        <ul>
+          <li>La taille de la police/<code>font-size</code></li>
+          <li>L'épaisseur de la police(normal, gras, très gras)/<code>font-weight</code></li>
+          <li>Le style de la police/<code>font-style</code></li>
+          <li>Le nom de la police/<code>font-family</code></li>
+          <li>La couleur<code>color</code></li>
+          <li>La hauteur de l'alignement<code>line-height</code></li>
+        </ul>
+    </article>
+
+    <!-- SLIDE CSS Fonts 2 -->
+    <article class="slide slide-list">   
+    <h2>Enjolivez vos caractères avec le CSS,  2e partie</h2> 
+      <p>Modifions notre police de caractère pour Helvetica linéal (sans-sérif): </p>
+<pre><code class="language-css">
+  body {
+    color: #444444;
+    font-family: Helvetica, Arial, sans-serif;    
+  }
+</code></pre>
+      <p>La propriété «font-family» (famille de police) accepte une liste de type de polices: le premier est votre premier choix de police, les autres paraîtrons seulement si le premier choix (dans l'ordre) n'est pas disponible. Toutes les polices ne sont pas disponibles, autant que possible choisissez-en une qui sera <em>web-safe</em>.</p>
+        <ul>
+          <li style="font-family: Arial;">Arial</li>
+          <li style="font-family: Verdana;">Verdana</li>
+          <li style="font-family: 'Times New Roman';">Times New Roman</li>
+          <li style="font-family: Georgia;">Georgia</li>
+          <li style="font-family: Courier;">Courier</li>
+        </ul>
+    </article>
+
+        <!-- SLIDE CSS Fonts 2 -->
+    <article class="slide slide-list">
+      <h2>Modifier une <code>Font-size</code></h2> 
+        <p>Si nous voulions que nos balises <code>&lt;h1></code> et <code>&lt;h2></code> soient plus grosses, nous écrirons:</p>
+<pre><code class="language-css">
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 32px;
+}
+</code></pre>
+    </article>
+
+    <!-- SLIDE CSS Fonts 4 -->
+    <article class="slide slide-list">
+      <h2>Modifier le <code>Line-Height</code></h2>
+      <p>Nous pouvons modifier la hauteur de l'alignement du texte /<em>line height (ou leading)</em> avec la propriété  <code>line-height</code></p>
+      <p><code>line-height</code> spécifie une hauteur équivalente au multiple de la taille de la police choisie.  Donc, une valeur de <code>1.4</code> signifierait que les lignes seraient <code>1.4</code> fois plus hautes que le texte.</p>
+<pre><code class="language-css">
+p {
+  line-height: 1.4;
+}
+</code></pre>
+      </ul>
+    </article>
+    
+    <!-- SLIDE CSS Images 1 -->
+    <article class="slide slide-list">
+      <h2>Modifier des images</h2>
+      <p>Ajoutons des bordures autour de votre photo de profil, votre <code>&lt;img></code></p>
+<pre><code class="language-css">
+img {}
+</code></pre>
+        <p>La propriété de la bordure/<code>border</code> possède 3 paramètres importants:  la largeur/<em>width</em>,  le style/<em>style</em> et la couleur/<em>colour</em>. Donc, si nous voulons une bordure large d'1px, <em>solid</em>(c-a-d une ligne pleine), grise, nous devrons écrire:
+<pre><code class="language-css">
+img {
+  border: 1px solid grey;
+}
+</code></pre>        
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Classes 1 -->
+    <article class="slide slide-list">
+      <h2>Plus précisément</h2>
+        <p>Nos bordures sont maintenant appliquées sur <strong>toutes</strong> les images de notre page, incluant notre logo. Ce n'est pas ce que nous voulons, nous voudrons donc trouver une façon de sélectionner <strong>seulement</strong> la photo de profil. </p>
+
+        <p>Le HTML nous permet d'ajouter des identificateurs à nos balises pour que nous puissions ensuite les sélectionner. Nous les appelons des « classes »/ <code>class</code>.</p>
+
+        <p>Les <code>class</code> sont des attributs que nous ajoutons aux balises.</p>
+<pre><code class="language-markup">
+&lt;p class="classname">&lt;/p>
+</code></pre>
+    </article>
+
+    <!-- SLIDE CSS Classes 2 -->
+    <article class="slide slide-list">
+      <h2>Cibler un élément avec une « classe »</h2>
+      <p><p>Nous pouvons écrire un sélecteur dans notre CSS pour cibler l'élément auquel nous avons ajouté une classe en utilisant:<code> . </code></p><code> . </code></p>
+<pre><code class="language-css">
+p.classname {}
+</code></pre>        
+        <p>Et ajouter le style désiré uniquement à l'item choisi avec la classe:</p>
+<pre><code class="language-css">
+p.classname {
+  color: red;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Classes Exercise -->
+    <article class="slide slide-list">
+      <h2>Exercice: Styliser votre photo de profil </h2>
+      <ul>
+        <li>Stylez votre photo</li>
+        <li>Ajouter une classe <code>profile</code> à la balise correspondante à votre image de profil</li>
+        <li>Cibler cette classe dans votre CSS avec le sélecteur <code>img.profile</code></li>
+        <li>Ajoutez-y une bordure de la couleur de votre choix</li>
+        <li>Si votre image est trop grande, vous pouvez la redimensionner avec les propriétés <code>width</code> et <code>height</code>, qui doivent être en  <code>px</code> (pixels). Essayez 200 x 200 px. Voici un exemple de comment utiliser le <code>width</code> et le <code>height</code> ci-dessous:</li>
+<pre><code class="language-css">
+img {
+  width: 200px;
+  height: 200px;
+}
+</code></pre>
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Classes Exercise Solution -->
+    <article class="slide slide-list">
+      <h2>Résultat: Styliser votre photo de profil</h2>
+      <p>Votre  HTML devrait ressemble à ceci: </p>
+<pre><code class="language-markup">
+&lt;img class="profile" src="images/profile.jpg"> 
+</code></pre>
+        <p>Et votre CSS devrait ressemble à cela:</p>
+<pre><code class="language-css">
+img.profile {
+  border: 1px solid grey;
+  width: 200px;
+  height:200px;  
+}  
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Classes on multiple elements -->
+    <article class="slide slide-list">
+      <h2>Ajouter plus de classes</h2>
+      <p>Nous pouvons faire la même chose pour styliser nos images d'objets favoris.</p>
+      <p>Comme nous voudrons probablement obtenir le même style pour nos 4 images, nous devrons leur ajouter le même nom de classe.</p>
+      <p>Ajoutez la classe « <em>favorite</em> » à chaque image.</p>
+<pre><code class="language-markup">
+&lt;img class="favourite" src="images/kitten.jpg" >
+</code></pre>   
+      <p>Ajouter du style à vos images, faites varier leurs <code>width</code>, <code>height</code>, et <code>border</code>.</p>        
+    </article>
+
+    <!-- SLIDE CSS Classes on fav images -->
+    <article class="slide slide-list">
+      <h2>Faites-en plus!</h2>
+      <ul>
+        <li>Essayez des choses amusantes comme un <code>border-radius: 50%;</code></li>
+        <li>Une <code>border: 3px dotted pink;</code></li>
+        <li>Ou encore <code>box-shadow: 0 0 4px grey;</code></li>
+        <li>Votre CSS devrait ressembler à ceci:</li>
+<pre><code class="language-css">
+img.favourite {
+  border: 1px solid grey;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+</code></pre>        
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Properties -->
+    <article class="slide slide-subhead">
+      <h1>Ne vous souciez pas d'avoir à retenir toutes ces propriétés CSS. Comme il y en a beaucoup, même les pros doivent consulter des références de temps à autre :)</h1>      
+    </article>
+
+    <!-- SLIDE CSS Box Model -->
+    <article class="slide slide-list">
+    <h2>Le « Box Model »</h2>
+    <h3>Voici une partie plus complexe du CSS, ne vous en faites pas si elle vous semble complexe à première vue !</h3>
+    <p>Le « Box Model » décrit la façon dont le CSS style les dimensions et l'espacement entre les éléments HTML.</p>
+
+    <p>Pour comprendre le «Box Model», nous devons comprendre comment les navigateurs «voient» ces éléments HTML.</p>
+
+    <p>Pour le navigateur, <strong>tous</strong>  les éléments HTML sont des boîtes rectangulaires.</p>
+
+    <p>Si nous montrions les contours de chaque élément d'un document HTML, cela ressemblerait un peu à la prochaine diapo:</p>        
+    </article>
+
+    <!-- SLIDE CSS Box Model 2 -->
+    <article class="slide slide-list">      
+     <img src="assets/redboxes.png"></li>
+    </article>
+
+    <!-- SLIDE CSS Box Model 3 -->
+    <article class="slide slide-list">
+      <h2>Le « Box Model »</h2>
+      <p>En CSS il existe 5 propriétés pour déterminer les dimensions et l'espacement entre ces boîtes:</p>
+      <ul>
+        <li><code>Margin</code>, <code>padding</code>, <code>border</code>, <code>width</code>, et <code>height</code> (marges, marge intérieure ou rembourrage, largeur et hauteur)</li>
+        <li>Ces 5 propriétés sont les fondements du « <strong>Box Model</strong> »</li>
+        <img src="assets/border-box-model.gif">
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Box Model: Margin & Padding -->
+    <article class="slide slide-list">
+      <h2>« Margins » et « Paddings »</h2>
+      <ul>
+        <li>Disons que nous avons 3 éléments dans notre document HTML: un <code>&lt;p></code>, un <code>&lt;h2></code>, et un autre <code>&lt;p></code></li>
+        <li>Ajoutons une bordure rouge autour d'un <code>&lt;h2></code>  et ajouter un arrière-plan rose:</li>
+<pre><code class="language-css">
+h2 {
+  border: 1px solid red;
+  background: pink;
+}
+</code></pre>
+      <li>Jusqu'à présent, le résultat n'est pas joli. Tous les éléments sont trop rapprochés !</li>        
+      <img src="assets/bm1.png">
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Box Model: Margin-->
+    <article class="slide slide-list">  
+      <h2>« Margins »</h2>
+      <p>Il y a 2 propriétés CSS pour ajouter des espaces autour des éléments: <code>margin</code>, et <code>padding</code></p>
+      <p>La propriété <code>margin</code> ajoute de l'espace <em>autour</em> de l'element, en dehors de la bordure :</p>
+<pre><code class="language-css">
+h2 {
+  margin: 40px;
+}  
+</code></pre>  
+      <p>Ce code ajoute 40px d'espace de chaque côté de l'élément.</p>      
+        <img src="assets/bm2.png" alt="">
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Box Model: Padding -->
+    <article class="slide slide-list">
+      <h2>« Padding »</h2>
+      <p>Si nous voulons ajouter de l'espace à <em>l'intérieur</em> de la bordure, nous utiliserons la propriété <code>padding</code>:</li>
+<pre><code class="language-css">
+h2 {
+  margin: 40px;
+  padding: 40px;
+}
+</code></pre> 
+      <p>Ce code ajoute 40px d'espace de chaque côté de l'élément, mais à l'intérieur de la bordure.</p>       
+        <img src="assets/bm3.png" alt="">        
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Box Model: Margin & Padding -->
+    <article class="slide slide-list">
+      <h2>Margin vs. Padding</h2>
+      <p>Ajouter du <code>padding</code> sur un élément, le rendra <strong>plus gros</strong>, alors qu'ajouter de la <code>margin</code> ajoutera de l'espace autour de l'élément. </p>
+      <p>Si vous créez un élément large de 100px et ajoutez 40px de <code>padding</code>, l'élément aura, au final, 180px de largeur. </p>
+      <p>Si vous ajouter 40px de <code>margin</code> à un élément large de 100px, il demeurera large de 100px au final.</p>
+      <p>Si vous ajoutez une <code>border</code> large d'1px à un élément large de 100px, il deviendra large de 102px.</p>
+      <p>Si votre élément n'a pas de bordure ou d'arrière-plan, vous ne serez peut-être pas capable de percevoir la différence entre les <code>margin</code> et le <code>padding</code>.</p>
+        <!-- TODO: diagram of h2 thing -->
+    </article>
+
+    <!-- SLIDE CSS Box Mdoel: Margin & Padding Sides -->
+    <article class="slide slide-list">
+      <h2>Plus sur les « Margins » et « Padding »</h2>
+      <p>Vous pouvez spécifier de quel côté vous voulez ajouter votre margin ou padding avec les propriétés: <code>margin-top, margin-right, margin-bottom</code>, et <code>margin-left</code> properties:</p>
+<pre><code class="language-css">
+h2 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+</code></pre>        
+      <p>il en va de même pour <code>padding</code> et le <code>border</code>:</p>
+<pre><code class="language-css">
+h2 {
+  padding-bottom: 40px;
+  border-left: 1px solid red;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Box Model Exercise -->
+    <article class="slide slide-list">
+      <h2>Exercice: « Box Model »</h2>
+      <ul>
+        <li>Ajoutez du <code>padding</code> à votre image de profil. Ceci devrait ajouter de l'espace entre l'image et la bordure. Essayer avec 5px.</li>
+        <li>Ajoutez du <code>padding</code> et de la <code>margin</code> à vos images «favourite things ». Essayez 5px pour le <code>padding</code> et 10px pour les <code>margin.</code></li>
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Box Model Answer -->
+    <article class="slide slide-list">
+      <h2>Résultats: « Box Model »</h2>
+      <p>Votre code devrait ressemble à ceci:</p>
+<pre><code class="language-css">
+img.profile {
+  padding: 5px;
+}
+img.favourite {
+  padding: 5px;
+  margin: 10px;
+}
+</code></pre>      
+    </article>
+
+    <!-- SLIDE CSS Box Model: Center logo -->
+    <article class="slide slide-list">
+      <h2>Centrer le logo</h2>
+      <p>Pour centrer un élément en CSS, nous déclarerons les marges de côté à <code>auto</code>, ce qui indiquera au navigateur de calculer automatiquement la marge nécessaire à ajouter pour que l'élément soit centré horizontalement. </p>
+      <p>Au lieu de spécifier les marges de gauches et les marges de droite appropriées (<code>margin-left</code> et <code>margin-right</code>), nous pouvons utiliser ce raccourci:</p>
+<pre><code class="language-css">
+img {
+  margin: 0 auto;
+}
+</code></pre>    
+      <p>Le <code>0</code>  indique la mesure de la marge du haut et du bas (<code>margin-top & margin-bottom</code>), tandis qu’auto indique autant la marge de gauche que celle de droite (<code>margin-left & margin-right</code>).</p>    
+    </article>
+
+    <!-- SLIDE CSS Box Model: Center Logo 2 -->
+    <article class="slide slide-list">
+      <h2>Centrer le logo</h2>
+      <p>Nous avons besoin de cibler notre élément logo pour ne pas centrer toutes les images.</p>
+      <p>Ajoutons la classe <code>logo</code> à votre balise <code>&lt;img></code> correspondante à votre logo:</p>
+<pre><code class="language-markup">
+&lt;img class="logo" src="images/logo.png">
+</code></pre>  
+      <p>Puis, écrivez un sélecteur dans votre CSS et appliquez la propriété <code>margin</code>:</p>      
+<pre><code class="language-css">
+img.logo {
+  margin: 0 auto;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Box Model: Center logo 3 -->
+    <article class="slide slide-list">
+      <h2>Il ne s'est rien passé!</h2>
+      <p>Revenons de quelques étapes:</p>
+      <p>Vous vous souvenez des boîtes aux bordures rouges ?</p>
+        <img src="assets/redboxes.png" width="400px;">
+      <p>Aviez-vous remarqué que les bordures rouges autour des images ne s'étiraient pas d'un bout à l'autre de l'écran comme les autres boîtes? </p>
+    </article>
+
+    <!-- SLIDE CSS Box Model: Block vs. Inline -->
+    <article class="slide slide-list">  
+    <h2>Il ne s'est rien passé, la suite !</h2>    
+      <p>Ce résultat est dû au fait que les balises <code>&lt;img></code> sont des éléments « <em>inline</em> ». Les éléments « <em>inline</em> » ne prennent <strong>pas</strong> la pleine largeur de la page, ils prennent seulement l'espace requis par leur contenant.</p>
+      <p>La plupart des éléments, comme  les <code>&lt;h2>, &lt;p></code>, ou <code>&lt;ul></code> éléments sont de type « <em>block</em> »</p>
+      <p>Parce que votre élément logo est aussi large que l'image, nous ne pouvons pas le centrer dans la page. Heureusement, il est facile de remédier à cette situation:  dites à la balise  <code>&lt;img></code>  de se comporter comme un élément <em>block</em> en utilisant la propriété <code>display</code></p>
+<pre><code class="language-css">
+img.logo {
+  margin: 0 auto;
+  display: block;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Box Model: Inline -->
+    <article class="slide slide-list">
+      <h2>D'autres éléments « inline » </h2>
+      <p>D'autres éléments communs sont de type « <em>inline</em> » comme le  <code>&lt;a>, &lt;strong></code>, et <code>&lt;em></code>.</p>
+      <p>les éléments « <em>inline</em> » ne créent pas de saut de ligne, ainsi vous les retrouverez souvent à l'intérieur d'un paragraphe ou dans le milieu d'une phrase.</p>
+    </article>
+
+    <!-- SLIDE CSS Layout Intro -->
+    <article class="slide slide-list">
+      <h2>Canevas: Section par Section</h2>
+      <p>Notre site a beaucoup plus d'allure maintenant, il donc  temps de styliser les différentes sections.</p>
+      <p>Nous aurons besoin d'une façon de cibler chaque section individuellement, regroupant les éléments à l'intérieur d'une même section pour créer un canevas.</p>
+      <p>Heureusement, le HTML possède une balise <code>&lt;section></code> . Nous engloberons chaque section avec une balise <code>&lt;section></code> et ajouter une classe à chacune d'entre elles, ainsi nous pourrons les styliser individuellement avec le CSS.</li>        
+    </article>
+
+    <!-- SLIDE CSS Layout  -->
+    <article class="slide slide-list">
+      <h2> Section « banner »</h2>
+      <ul>
+        <li>Ajoutez une balise ouvrante <code>&lt;section></code> avant le logo</li>
+        <li>Ajoutez une balise fermante <code>&lt;/section></code> juste après le paragraphe de slogan.</li>
+        <li>Ajoutez une classe appelée «banner» à la balise <code>&lt;section></code>.</li>
+<pre><code class="language-markup">
+&lt;section class="banner">
+  &lt;img>
+  &lt;h1>...&lt;/h1>
+  &lt;p>...&lt;/p>
+&lt;/section>  
+</code></pre>        
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Layout Banner 2 -->
+    <article class="slide slide-list">
+      <h2>CSS de la section « banner »</h2>
+      <ul>
+        <li>Ciblez la balise <code>&lt;section></code> avec un sélecteur dans votre CSS:</li>
+<pre><code class="language-css">
+section.banner {}  
+</code></pre>        
+        <li>Ajoutez un peu de <code>padding</code> dans le haut et le bas de la section pour donner à notre logo et notre texte un peu d'espacement.</li>
+<pre><code class="language-css">
+section.banner {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+</code></pre>        
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Layout Banner 3 -->
+    <article class="slide slide-list">
+      <h2>Ajoutez une image d'arrière-plan</h2>
+      <ul>
+        <li>La propriété CSS <code>background-image</code>/ / image d'arrière-plan vous permet de spécifier le chemin d'une image comme vous l'auriez fait avec une balise <code>&lt;img></code> en HTML :</li>
+<pre><code class="language-css">
+background-image: url('images/background.jpg');
+</code></pre>               
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Layout Banner Exercise -->
+    <article class="slide slide-list">
+      <h2>Exercice: Ajoutez une image d'arrière-plan</h2>
+      <ul>
+        <li>Trouvez une grande image dans votre ordinateur ou sur Internet et ajoutez-la au dossier <stong>image</strong> de votre projet</li>
+        <li>Ajoutez-la en <code>background-image</code> de votre nouvelle bannière <code>&lt;section></code> que nous venons de créer</li>
+        <li>Ajustez la propriété <code>color</code> de la section avec une couleur qui contraste celle de votre image d'arrière-plan</li>
+        <li>Ajustez la propriété <code>text-align</code> avec la valeur <code>center</code> our centrer le texte.</li>
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Layout Banner Assigmment soltuion -->
+    <article class="slide slide-list">
+      <h2>Résultat: Ajoutez une image d'arrière-plan </h2>
+      <ul>
+        <li>Votre CSS devrait ressembler à ceci:</li>
+<pre><code class="language-css">
+section.banner {
+  background: url('images/background.jpg');
+  color: #ffffff;
+  text-align: center;
+}
+</code></pre>        
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Normalize -->
+    <article class="slide slide-list">
+      <h2>Le style  « par défaut » des navigateurs</h2>
+      <p>Nous avons une affreuse marge blanche tout autour de notre image d'arrière-plan !</p>
+      <p>Cela est causé par le navigateur (Chrome) qui ajoute un tas de style par défaut, incluant des marges, aux éléments HTML. </p>
+      <p>Nous pouvons aisément nous débarrasser de ces indésirables styles en ajoutant un  «snippet» (un peu de code déjà existant ) appelé <strong>normalize.css</strong>.</p>
+      <p>Ouvrez le fichier <strong>normalize.css</strong> et copiez son contenu dans le haut de votre document CSS.</li>
+    </article>
+
+    <!-- SLIDE CSS Banner: Typography -->
+    <article class="slide slide-list">
+      <h2>Le sélecteur enfant - CSS Child Selector</h2>
+      <p>Ajustez le texte dans la section « Banner ».</p>
+      <p>Nous voudrons probablement rendre le teste du paragraphe plus gros, et réduire la marge du bas du <code>&lt;h1></code></p>
+      <p>Nous aurons besoin d'une façon de sélectionner la balise de paragraphe à l'intérieur de la section <em> banner </em> et seulement elle. </p>
+      <p>Nous pourrions y ajouter une classe comme nous avons fait pour l'image, mais il y existe une autre façon, plus facile. </p>
+      <p>Nous pouvons utiliser la classe que nous avons ajoutée à l'élément <code>&lt;section></code> pour cibler les éléments qui sont à l'intérieur.</p>
+    </article>
+
+    <!-- SLIDE CSS Child Selectors -->
+    <article class="slide slide-list">
+      <h2>CSS Child Selectors — Les sélecteurs d'élément enfant</h2>
+      <p>Vous pouvez écrire un <em> <strong>child selector</strong> </em> pour sélectionner les balises qui sont des éléments enfants nichés dans les autres balises.</p>
+      <p>Nous ajoutons un espace entre le sélecteur parent et le sélecteur enfant pour spécifier:</p>
+<pre><code class="language-css">
+section img {}  
+</code></pre>        
+      <p>Le sélecteur ci-dessus sélectionnera seulement les balises <code>&lt;img></code> qui sont nichées dans la balise <code>&lt;section></code>.</p>
+    </article>
+
+    <!-- SLIDE CSS Exercise Child Selectors -->
+    <article class="slide slide-list">
+      <h2>CSS Child Selectors — Les sélecteurs d'élément enfant</h2>
+      <p>Pour cibler la balise <code>&lt;p></code>  dans la  <em>banner</em> <code>&lt;section></code>, nous utiliserons:</p>
+<pre><code class="language-css">
+section.banner p {}  
+</code></pre>     
+      <p>Essayez d'augmenter la propriété (taille de la police) /<code>font-size</code> de la balise <code>&lt;p></code> tag.</p>   
+      <p>Sélectionnez la balise <code>&lt;h1></code> dans la section «banner»  de la même façon, puis utiliser la propriété <code>text-transform: uppercase</code>. pour mettre le texte en lettre majuscule. Votre CSS devrait ressembler à ceci:</p>
+<pre><code class="language-css">
+section.banner p {
+  font-size: 18px;
+}
+section.banner h1 {
+  text-transform: uppercase;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Layout About Section -->
+    <article class="slide slide-list">
+      <h2>La section « à propos » — The "About" Section</h2>
+      <p>Répétons la procédure pour la section « about »</p>
+      <p>Nous engloberons la section entre des balises <code>&lt;section></code> et nous ajouterons une classe « about »:</p>
+<pre><code class="language-markup">
+&lt;section class="about">
+  &lt;h2>...&lt;/h2>
+  &lt;img>
+  &lt;p>...&lt;/p>
+&lt;/section>
+</code></pre>
+    </article>
+
+    <!-- SLIDE CSS Layout About 2 -->
+    <article class="slide slide-list">
+      <h2>La section « à propos » — The "About" Section</h2>
+      <p>Ajoutons une image d'arrière-plan en mosaïque pour cette section.</p>
+      <p>Utilisez une image de votre dossier <strong>images</strong>, ou prenez là en ligne. Essayez <a href="http://subtlepatterns.com/">http://subtlepatterns.com</a>. Téléchargez une image et ajoutez-là à votre dossier <strong>images</strong>. Ajoutez l'image en arrière-plan de votre section «about».</p>
+<pre><code class="language-css">
+section.about {
+  background: url('images/pattern.png');
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Layout About 3 -->
+    <article class="slide slide-list">
+      <h2>Alignez horizontalement votre entête — Centre-aligning the header</h2>
+      <p>Nous voulons que l'entête de cette section soit aligné au centre. </p>
+      <p>Sélectionnons-le avec un <em>child selector</em>.</li>
+<pre><code class="language-css">
+section.about h2 {}
+</code></pre>
+      <p>Alignez-le au centre avec la propriété <code>text-align: center</code>:</p>
+<pre><code class="language-css">
+section.about h2 {
+  text-align: center;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Layout About 4 -->
+    <article class="slide slide-list">
+      <h2>Le Flux CSS — CSS <em>Floats</em></h2>
+      <p>Nous voulons aligner notre avatar à gauche et permettre au texte de se placer autour, de l'envelopper. Nous réussirons cela avec des <strong>« CSS Floats »</strong>.</p>
+      <p>Vous souvenez-vous comment tous les éléments HTML se positionnaient en éléments rectangulaires, les uns au-dessus des autres ?</p>
+      <img src="assets/redboxes_small.png">        
+      <p>Nous devons briser cet étalage en utilisant la propriété <strong> « float » </strong> sur les images pour les positionner sur les côtés. Ce qui aura pour résultat de tasser le texte à côté de l'image, parce que nous aurons modifié le flux des boîtes rectangulaires. </p>
+    </article>
+
+    <!-- SLIDE CSS Layout About 5 -->
+    <article class="slide slide-list">
+      <h2>Le Flux CSS — CSS <em>Floats</em></h2>
+      <p>Nous avons écrit le sélecteur pour notre <code>&lt;img></code>, de profil alors, ajoutons-lui la déclaration <code>float: left;</code> :</p>
+<pre><code class="language-css">
+img.profile {
+  float: left;
+}
+</code></pre> 
+      <p>Ceci a <em>floaté</em> notre image vers la gauche, mais il y a un problème… pouvez-vous le trouver ?</p>   
+        <img src="assets/floatfail.png" height="200">    
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Layout About 5 -->
+    <article class="slide slide-list">
+      <h2>Le Flux CSS — CSS <em>Floats</em></h2>
+      <p>Nous avons brisé le flux des boîtes rectangulaires en ajoutant <code>float: left;</code> à notre image.</p>
+      <p>Nous devons restaurer le flux régulier des boîtes après cette section.</p>
+      <p>Nous corrigerons cette situation en ajoutant  <code>overflow: hidden;</code> à l'élément parent (<code>&lt;section class="about"></code>).</p>
+      <p>La propriété <code>overflow: hidden;</code> force les éléments à contenir tous les éléments enfants <em>floatés</em>, pour ne pas qu'ils dérangent le flux des éléments après eux.</p>
+<pre><code class="language-css">
+section.about {
+  overflow: hidden;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Layout Favourites -->
+    <article class="slide slide-list">
+      <h2>Prochaine Section: la  <em>Favourites</em></h2>
+      <p>Il n'y a pas beaucoup à faire ici, mais centrons les éléments de cette section.</p>
+      <p>Premièrement, nous devons ajouter une balise englobante <code>&lt;section></code> autour du contenu <em>Favourite</em>.</p>
+      <p>Ajoutez une balise ouvrante <code>&lt;section></code> avant l'entête  <em>Favourites</em> , et une balise fermante <code>&lt;/section></code> après la dernière image:</p>
+<pre><code class="language-markup">
+&lt;section class="favourites">
+  &lt;h2>...&lt;/h2>
+  &lt;h3>...&lt;/h3>
+  &lt;img class="favourite" src="images/kitten.jpg">
+  &lt;img class="favourite" src="images/kitten.jpg">
+  &lt;img class="favourite" src="images/kitten.jpg">
+  &lt;img class="favourite" src="images/kitten.jpg">
+&lt;/section>
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Layout Favourites 2 -->
+    <article class="slide slide-list">
+      <h2>Aligner horizontalement</h2>
+      <p>Écrivons un sélecteur pour la section que nous venons de créer: </p>
+<pre><code class="language-css">
+section.favourites {}  
+</code></pre>
+      <p>Et alignez-le au centre:</p>        
+<pre><code class="language-css">
+section.favourites {
+  text-align: center;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Layout Contact -->
+    <article class="slide slide-list">
+      <h2>Exercice:  Section <em>Contact</em></h2>
+      <ul>
+        <li>Répéter le processus. Ajoutez une balise englobante <code>&lt;section></code> à la section <em>Contact</em> et alignez le tout horizontalement avec le CSS.</li>
+        <li>Ajoutez une image d'arrière-plan à la section <em>Contact</em>.</li>
+        <li>Ajoutez des <code>margin</code>s autour des images de la section contact.</li>
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Layout Contact 2 -->
+    <article class="slide slide-list">
+      <h2>Résultat: Section <em>Contact</em></h2>
+      <p>Votre HTML vous devait ressembler à ceci: </p>
+<pre><code class="language-markup">
+&lt;section class="contact">
+  &lt;h2>Contact Me&lt;/h2>
+  &lt;a href="https://">...&lt;/a>
+  &lt;a href="https://">...&lt;/a>
+  &lt;a href="https://">...&lt;/a>
+&lt;/section>
+</code></pre>
+      <p>Et votre CSS, à cela :</p>        
+<pre><code class="language-css">
+section.contact {
+  text-align: center;
+  background: url('images/tile2.png');
+}
+section.contact img {
+  margin: 20px;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Layout Classes -->
+    <article class="slide slide-list">
+      <h2>Styliser plusieurs sections à la fois</h2>
+      <p>Toutes nos sections seraient plus jolies si elles étaient plus espacées, elles sont un peu tassées les unes contre les autres.</p>
+      <p>Ajoutons un peu de <code>padding</code> to our sectionsà nos sections.  Comme nous voulons ajouter la même quantité de <code>padding</code> à chaque section, nous pouvons éviter de nous répéter en ajoutant un nom de classe à chaque section. Enfin, nous pourrons cibler cette classe dans notre CSS.</p>
+      <p>Ajoutez une classe <em>box</em> à chaque contenant <code>&lt;section></code> (sauf la section <em>Banner</em>).</p>
+<pre><code class="language-markup">
+&lt;section class="about box">&lt;/section>
+&lt;section class="favourites box">&lt;/section>
+&lt;section class="contact box">&lt;/section>
+</code></pre>        
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Layout Classes -->
+    <article class="slide slide-list">
+      <h2>Styliser plusieurs sections à la fois</h2>
+      <p>Écrivons un sélecteur pour nos nouvelles <em>class</em>:</p>
+<pre><code class="language-css">
+section.box {}
+</code></pre>
+      <p>Et ajouter un peu de <em>padding</em> à toutes nos sections:</p>        
+<pre><code class="language-css">
+section.box {
+  padding: 50px 100px;
+}
+</code></pre>        
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Layout Classes 3 -->
+    <article class="slide slide-list"> 
+    <h2>Styler plusieurs sections à la fois, la suite</h2>     
+      <p>Nous pouvons aussi utiliser nos classes <code>box</code> pour cibler nos entêtes dans chacune des sections.</p>
+      <p>Ensuite, nous ciblerons nos balises <code>&lt;h2></code> et <code>&lt;h3></code>, nous écrirons un sélecteur pour les deux, en les séparant avec une virgule. </p>
+<pre><code class="language-css">
+section.box h2, section.box h3 {}
+</code></pre>        
+      <p>Et changeons la couleur de nos entêtes:</p>
+<pre><code class="language-css">
+section.box h2, section.box h3 {
+  color: #A8258D;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Extras -->
+    <article class="slide slide-subhead">
+      <h1>Maintenant, nous avons un très chouette site web dont tous les éléments sont<br /> parfaitement <em>stylés</em> !</h1>
+      <h2>Mais, il reste quelque chose à ajouter pour rendre le tout extraordinaire…</h2>
+    </article>
+
+    <!-- SLIDE CSS Extras: Background -->
+    <article class="slide slide-list">
+      <h2>Les arrière-plans fixes</h2>
+      <p>Pour arriver à ce joli effet où l'arrière-plan reste en place lorsque vous faites dérouler la page, vous n'avez qu'à ajuster la propriété <code>background-attachment</code>:</p>
+<pre><code class="language-css">
+section.banner {
+  background-attachment: fixed;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Extras: Custom Fonts -->
+    <article class="slide slide-list">
+      <h2>Ajouter une police de caractère</h2>
+      <p>Des services comme <a href="http://www.google.com/fonts/">Google Fonts</a> rendent facile l'utilisation de plusieurs polices de caractères qui ne sont pas normalement supportées par les ordinateurs.</p>
+      <p>Allez sur <a href="http://www.google.com/fonts/">Google Fonts</a> et recherchez une police qui vous plaît.</p>
+      <p>Cliquez sur  <em>"add to collection"</em> quand vous aurez trouvé, puis cliquez sur le bouton <em>"use"</em>.</p>
+      <p>Trouvez le code  à l'étape 3 des instructions et copiez-les dans le <code>&lt;head></code> de votre document HTML. (Vous vous souvenez comment la section <code>&lt;head></code> envoie des informations «invisibles» au navigateur ?)</p>
+<pre><code class="language-markup">
+&lt;link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Extras: Custom Fonts -->
+    <article class="slide slide-list">
+      <h2>Ajouter une police de caractère, partie 2</h2>
+      <p>Copiez le code de l'étape 4 des instructions, dans votre document CSS.</p>
+      <p>Ajouter la ligne de code n'importe où vous souhaitez utiliser votre police de caractère spéciale.</p>
+      <p>Ajoutons-la d'abord à notre nos balises d'entête.</p>
+<pre><code class="language-css">
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
+}
+</code></pre>        
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Extras: Menu -->
+    <article class="slide slide-list">
+      <h2>Ajouter un Menu</h2>
+      <p>Ajoutons un menu au début de notre document pour que nos usagers puissent naviguer sur le site.</p>
+      <p>Les menus sont communément bâtis sous forme de liste avec des liens à l'intérieur de chaque élément listé.</p>
+      <p>Il existe 2 types de liste en HTML, les listes ordonnées et désordonnées (numérotés et à puce).</li>
+      <p>Et comme nous n'avons pas besoin de numéros, nous utiliserons une liste à puce, une liste désordonnée avec des balises <code>&lt;ul>&lt;/ul></code> pour indiquer où la liste commence et se termine.</li>    
+      <p>Chaque puce ou élément de liste est indiqué par des balises <code>&lt;li>&lt;/li></code> qui doivent être <strong>nichées</strong> entre des balises <code>&lt;ul></code>.</p>
+<pre><code class="language-markup">
+&lt;ul>
+  &lt;li>One list item&lt;/li>
+  &lt;li>Another list item&lt;/li>
+&lt;/ul>
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Extras: MEnu -->
+    <article class="slide slide-list">
+      <h2>Ajouter un menu, suite</h2>
+      <p>Ajoutez une liste <code>&lt;ul></code> avec une classe <em>"menu"</em> au début de votre document HTML, juste après la balise <code>&lt;body></code> et ajoutez chaque entête de <code>&lt;section></code> comme item de liste. Remarquez que nous avons transformé chaque item de liste en lien (plus à ce sujet dans un instant).Attention: n'oubliez jamais de fermer vos balises de liste !</p>
+<pre><code class="language-markup">
+&lt;ul class="menu">
+  &lt;li>&lt;a href="#about">About&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#favourites">Favourites&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#contact">Contact&lt;/a>&lt;/li>
+&lt;/ul>
+</code></pre>    
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Extras: Menu 2 -->
+    <article class="slide slide-list">
+      <h2>Ajouter un menu, suite</h2>
+      <p>Ajoutons un peu de style à ces éléments de liste, comme une bordure, un arrière-plan et enlevons les puces de la liste.</p>
+<pre><code class="language-css">
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border-bottom: 1px solid #434A5C;
+  background: #ffffff;
+}
+</code></pre>       
+    </article>
+
+    <!-- SLIDE CSS Extras: Menu 3 -->
+    <article class="slide slide-list">
+      <h2>Styliser le menu</h2>
+      <p>Nous avons besoin d'aligner notre menu.</p>
+      <p>Vous vous souvenez comment nous avions utilisé les propriétés <code>display: block;</code> et <code>display:inline;</code> ?</p>
+      <p>Aucune d'elles ne nous donnera le résultat que nous désirons, car la propriété <code>block</code> créera une nouvelle ligne pour chaque élément et la propriété <code>inline</code> ne nous laissera pas ajouter de padding entre les éléments de notre liste.</p>
+      <p>Heureusmenet, il existe une 3e option qui nous donnera le meilleur des modes: <code>display: inline-block;</code></p>
+      <p>Écrivez un sélecteur et appliquez la propriété <code>display: inline-block;</code> ainsi qu'un peu de <code>padding</code> autours de ces éléments (haut, bas et côtés)</p>
+<pre><code class="language-css">
+.menu li {
+  display: inline-block;
+  padding: 20px 35px;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Extras: Menu 4 -->
+    <article class="slide slide-list">
+      <h2>Styliser les liens d'un menu</h2>
+      <p>Ajoutez un peu de style aux liens de votre menu. Enlevez le soulignement par défaut avec la propriété <code>text-decoration: none</code></p>
+<pre><code class="language-css">
+.menu a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Extras: Menu 5 -->
+    <article class="slide slide-list">
+      <h2>Rendre le menu <em>"sticky"</em></h2>
+      <p>Nous pouvons faire en sorte que notre menu se retrouve toujours en haut de notre page même lorsque le site défile vers le bas, grâce à la valeur <code>position: fixed;</code> declaration.</p>
+      <p>La propriété <code>position: fixed;</code> requiert que nous définitions les propriétés <code>top</code> et <code>left</code> indiquer au navigateur où fixer le menu.</p>
+      <p>De cette façon, la boîte rectangulaire autour de notre menu se retrouve détruite, nous devons donc rétablir sa largeur en la définissant avec la propriété <code>width</code> et la valeur <code>100%</code> </p>
+<pre><code class="language-css">
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+</code></pre>        
+    </article>
+
+    <!-- SLIDE CSS Extras: Menu 6 -->
+    <article class="slide slide-list">
+      <h2>Faire fonctionner les liens</h2>
+      <p>Nous devons faire en sorte que les liens dans notre menu correspondent aux bonnes sections.</p>
+      <p>Nous y arriverons en ajoutant un attribut id à chaque section afin de qu'elles correspondent aux liens href <code>href</code> (sans le <code>#</code>).</p>
+<pre><code class="language-markup">
+&lt;section id="about" class="about box">&lt;/section>
+&lt;section id="favourites" class="favourites box">&lt;/section>
+&lt;section id="contact" class="contact box">&lt;/section>
+</code></pre>        
+      </ul>
+    </article>
+
+    <!-- SLIDE CSS Finished -->
+    <article class="slide slide-subhead">
+      <h1>Prochain exercice: soyez créatives !</h1>
+      <h2>Essayez de modifier de d'ajouter des propriétés CSS pour transformer votre page.</h2>
+      <h2>Jetez un oeil à <a href="cheatsheets/davechild_css2.pdf"></em>CSS Cheat Sheet<em></a> pour trouver une foule de propriétés à essayer.</h2>
+      <h2>Amusez-vous !</h2>
+    </article>
+
+    <!-- SLIDE Next Steps -->
+    <article class="slide slide-subhead">
+      <h1>Prochaines étapes: L'hébergement</h1>
+      <h2>Présentement, votre site web ne vit que sur votre ordinateur, mais si vous souhaitez l'héberger gratuitement sur le web<a href="http://thephuse.com/development/hosting-static-sites-on-github-for-beginners/"> voici un tutoriel sur l'hébergement (en anglais)avec Github</a>. Si vous avez déjà acheté de l'hébergement web et que vous souhaitez y téléverser/uploader votre projet, <a href="http://webdesign.com/wordpress-tips/ftp-for-beginners-how-to-upload-your-files/">apprenez-en davantage sur l'«upload» avec FTP.</a></h2>
+    </article>
+
+    <!-- SLIDE Next Steps -->
+    <article class="slide slide-subhead">
+      <h1>Prochaine étape: la version mobile !</h1>
+      <h2>Votre site peut être présentable sur votre ordinateur, mais il peut s'afficher bien différemment sur votre mobile. Heureusement, il sera facile de remédier à cette situation lorsque vous en aurez appris davantage sur le design et le développement destinés aux appareils mobiles.</h2>
+      <h2>Ladies learning code offre aussi l'atelier "Introduction au web mobile", peut-être nous nous y retrouverons!</h2>
+      <h2><a href="http://ladieslearningcode.com/events">Jetez un oeil à nos événements à venir, à travers le Canada.</a></h2>
+    </article>
+    
+    <article class='slide slide-subhead'>
+      <h1>Merci beaucoup!</h1>
+      <p></p>
+    </article>
+
+  <!-- **************************************** -->    
+  </div>
+  <!-- END div id=presentation -->
+
+  <div class="centered" style="font-size: 12px; padding-top: 10px;">(Utilisez les flèches de gauche et de droite de votre clavier pour naviguer.)</div>
+
+  <script src='src/jquery.min.js'></script>
+  <script src="src/modernizr.js"></script>
+
+  <!-- Update these paths to point to the correct files. -->
+  <script src="src/jquery.tmpl.min.js"></script>
+  <script src="src/deck.js/core/deck.core.js"></script>
+
+  <!-- Code Mirror -->
+  <script src="src/codemirror/lib/codemirror.js"></script>
+  <script src="src/codemirror/mode/xml/xml.js"></script>
+  <script src="src/codemirror/mode/css/css.js"></script>
+  <script src="src/codemirror/mode/javascript/javascript.js"></script>
+  <script src="src/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+  <!-- Prettify -->
+  <script src="src/prettify.js"></script>
+  <script src="src/lang-css.js"></script>
+  <script src="src/prism.js"></script>
+
+  <!-- Deck Core and extensions -->
+  <script src="src/deck.js/extensions/status/deck.status.js"></script>
+  <script src="src/deck.js/extensions/navigation/deck.navigation.js"></script>
+  <script src='src/deck.coder.js'></script>
+  <script src="src/deck.js/extensions/hash/deck.hash.js"></script>
+  <script src="src/deck.js/extensions/menu/deck.menu.js"></script>
+  <script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
