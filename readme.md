@@ -1,3 +1,5 @@
+[Arhived] Use https://github.com/ladieslearningcode/llc-html-css-one-page
+
 Ladies Learning Code HTML/CSS Workshop Slides
 =============================================
 Updated by Heather Payne and Tessa Thornton for June 2013 Workshop in Toronto. Forked from [Pearl Chen's awesome original](https://github.com/pchen/LLC-HTML-CSS)
